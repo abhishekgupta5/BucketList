@@ -2,3 +2,4 @@ venv/
 instance/
 variables.env
 *.pyc
+migrations/

@@ -1,11 +1,11 @@
 # app/models.py
 from app import db
 
-class BucketList(db.Model):
+class Bucketlist(db.Model):
     __tablename__ = 'bucketlists'
 
     id = db.Column(db.Integer, primary_key=True)
-    name = db.column(db.String(255))
+    name = db.Column(db.String(255))
     date_created = db.Column(db.DateTime, default=db.func.current_timestamp())
     date_modified = db.Column(db.DateTime, default=db.func.current_timestamp(), onupdate=db.func.current_timestamp())
 
@@ -18,12 +18,12 @@ class BucketList(db.Model):
 
     @staticmethod
     def get_all():
-        return BucketList.query.all()
+        return Bucketlist.query.all()
 
     def delete(self):
         db.session.delete(self)
         db.session.commit()
 
     def __repr__():
-        return "<BucketList: {}>".format(self.name)
+        return "<Bucketlist: {}>".format(self.name)
 
