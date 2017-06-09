@@ -2,7 +2,7 @@
 import unittest
 import os
 import json
-from .. import create_app, db
+from app import create_app, db
 
 class BucketlistTestCase(unittest.TestCase):
 
